@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Firebase auth</title>
 </head>
 <body>
-    <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+    <h2>Simple firebase authentication form</h2>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="#">
@@ -56,6 +57,35 @@
         </div>
     </div>
 
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyA2ZpKjXBTWmHN4vDgEhXrpKi5cj7F9WVE",
+          authDomain: "fire-auth-page.firebaseapp.com",
+          projectId: "fire-auth-page",
+          storageBucket: "fire-auth-page.appspot.com",
+          messagingSenderId: "46109873568",
+          appId: "1:46109873568:web:e38847b073c858c64940c5"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore()
+
+        // upate firestore settings
+        db.settings({timeStampsInSnapShots: true})
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
